@@ -5,16 +5,23 @@
   "repository": "https://github.com/Project-Extensao/Back-end.git",
   "author": "MilenaSf00 <milenasoaresf2@gmail.com>",
   "license": "MIT",
-  "engines":{
-    "node":"22.x"
+  "engines": {
+    "node": "18.x"
   },
   "scripts": {
-    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts",
+    "start": "nodemon src/server.ts",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "pre-commit": "^1.2.2",
     "prisma": "^5.18.0",
+    "rimraf": "^5.0.10",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.5.4"
   },
@@ -26,5 +33,10 @@
     "prisma-exclude": "^1.0.2",
     "reflect-metadata": "^0.2.2",
     "tsyringe": "^4.8.0"
-  }
+  },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ]
 }

@@ -1,6 +1,7 @@
 // src/dto/CreateProjetosDTO.ts
 
 export default interface IProjetoDTO {
+    id_projeto: number;
     modalidade: string;
     unidade_origem: string;
     titulo_projeto: string;

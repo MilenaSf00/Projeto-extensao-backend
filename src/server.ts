@@ -3,21 +3,21 @@ import 'express-async-errors';
 import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
 import { routes } from './routes/index';
-import { AppError } from './errors/AppErros'; // Certifique-se que o caminho esteja correto
+import { AppError } from './errors/AppErros'; 
 import '@prisma/client';
-import './modules/projetos/container/index'; // Certifique-se que o caminho esteja correto
+import './modules/projetos/container/index'; 
 
 const app = express();
 
-app.use(cors()); // Habilita CORS para permitir requisições de outras origens
+app.use(cors()); 
 
 const Port = process.env.PORT ||3333;
 
-app.use(express.json()); // Middleware para analisar o corpo da requisição como JSON
+app.use(express.json()); 
 
-app.use(routes); // Suas rotas
+app.use(routes); 
 
-// Middleware para tratamento de erros
+
 app.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {
     if (err instanceof AppError) {
@@ -26,7 +26,8 @@ app.use(
         message: err.message,
       });
     }
-
+    
+    
     return response.status(500).json({
       status: 'error',
       message: `Internal server error - ${err.message}`,

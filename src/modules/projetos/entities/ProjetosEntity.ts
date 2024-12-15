@@ -1,5 +1,5 @@
 class ProjetoEntity {
-  id_projeto: number;
+  /*id_projeto: number;
   modalidade: string;
   unidade_origem: string;
   titulo_projeto: string;
@@ -14,7 +14,26 @@ class ProjetoEntity {
   ult_alter_proj: Date;
   palavras_chave: string;
   resumo: string;
-  parcerias?: string | null; // Permite null se o banco de dados permitir
+  parcerias?: string | null; // Permite null se o banco de dados permitir*/
+
+ 
+    id_projeto: number;
+    modalidade: string | null;  // Permite `null`
+    unidade_origem: string | null;
+    titulo_projeto: string | null;
+    area_conhecimento: string | null;
+    area_tematica: string | null;
+    linha_tematica: string | null;
+    coord_projeto: string | null;
+    email_coord_projeto: string | null;
+    dt_inicio_proj: Date | null;
+    dt_fim_proj: Date | null;
+    situacao: string | null;
+    ult_alter_proj: Date | null;
+    palavras_chave: string | null;
+    resumo: string | null;
+    parcerias: string | null;
+
 
   constructor(props: ProjetoEntity) {
       this.id_projeto = props.id_projeto;

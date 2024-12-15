@@ -15,7 +15,7 @@ datasource db {
 
 
 model Projeto {
-  id_projeto          String   @id @default(uuid()) // Define id como string usando UUID
+  id_projeto           Int    @id 
   modalidade          String?
   unidade_origem      String?
   titulo_projeto      String?

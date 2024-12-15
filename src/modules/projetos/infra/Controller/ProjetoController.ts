@@ -5,13 +5,14 @@ import DeleteProjetoService from "../services/DeleteProjetoService";
 import FindOneProjetoService from "../services/FindOneProjetoService";
 import ListProjetoService from "../services/ListProjetoService";
 import UpdateProjetoService from "../services/UpdateProjetoService";
-import FilterProjetoService from "../services/FilterProjetoService";
+//import FilterProjetoService from "../services/FilterProjetoService";
 import ProjetoFilter from "../../Filters/ProjetoFilter";
 
 
 export default class ProjetosController {
     public async create(req: Request, res: Response): Promise<Response> {
         const {
+            id_projeto,
             modalidade,
             unidade_origem,
             titulo_projeto,
@@ -36,7 +37,6 @@ export default class ProjetosController {
 
         try {
             const createProjetoService = container.resolve(CreateProjetoService); // Renomeado para createProjetoService
-
             const projeto = await createProjetoService.execute({
                 modalidade,
                 unidade_origem,
@@ -52,7 +52,8 @@ export default class ProjetosController {
                 ult_alter_proj: new Date(formattedUltAlter),
                 palavras_chave,
                 resumo,
-                parcerias
+                parcerias,
+                id_projeto
             });
 
             return res.status(201).json(projeto);
@@ -153,7 +154,7 @@ export default class ProjetosController {
         }
     }
 
-    public async getFiltered(req: Request, res: Response): Promise<Response> {
+    /*public async getFiltered(req: Request, res: Response): Promise<Response> {
         const filterProjetoService = container.resolve(FilterProjetoService);
         const filters = req.query; // Captura os filtros da query string
 
@@ -164,5 +165,5 @@ export default class ProjetosController {
         } catch (error) {
             return res.status(500).json({ error: (error as Error).message || 'An unknown error occurred' });
         }
-    }
+    }*/
 }

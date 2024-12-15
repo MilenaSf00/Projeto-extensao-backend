@@ -1,3 +1,4 @@
+"use strict";
 /*import { PrismaClient } from "@prisma/client";
 import ProjetoEntity from "../../entities/ProjetosEntity";
 const prisma = new PrismaClient();
@@ -26,4 +27,5 @@ export default class FilterProjetoService {
         });
     }
 }
-*/
+*/ 
+//# sourceMappingURL=FilterProjetoService.js.map

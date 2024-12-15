@@ -7,5 +7,5 @@ export default interface IProjetoRepository{
     findById(id: number): Promise<ProjetoEntity | null>; 
     update(data: ProjetoEntity): Promise<ProjetoEntity>;
     listAll(): Promise<ProjetoEntity[]>;
-    filterProjects(filters: any): Promise<ProjetoEntity[]>; 
+    //filterProjects(filters: any): Promise<ProjetoEntity[]>; 
 }
