@@ -1,0 +1,30 @@
+{
+  "name": "Back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Project-Extensao/Back-end.git",
+  "author": "MilenaSf00 <milenasoaresf2@gmail.com>",
+  "license": "MIT",
+  "engines":{
+    "node":"14.x"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "prisma": "^5.18.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.18.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "prisma-exclude": "^1.0.2",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.8.0"
+  }
+}
