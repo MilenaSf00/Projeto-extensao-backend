@@ -10,6 +10,9 @@ import './modules/projetos/container/index'; // Certifique-se que o caminho este
 const app = express();
 
 app.use(cors()); // Habilita CORS para permitir requisições de outras origens
+
+const Port = process.env.PORT ||3333;
+
 app.use(express.json()); // Middleware para analisar o corpo da requisição como JSON
 
 app.use(routes); // Suas rotas
@@ -31,4 +34,4 @@ app.use(
   }
 );
 
-app.listen(3333, () => console.log('Server is running on port 3333!!'));
+app.listen(Port, () => console.log(`Server is running on port ${Port}`));
